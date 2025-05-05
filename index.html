@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class Activities - Home</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li onclick="navigateTo('index.html')">Home</li>
+      <li onclick="navigateTo('stocks.html')">Stocks</li>
+      <li onclick="navigateTo('dogs.html')">Dogs</li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Welcome!</h1>
+    <p id="quote"></p>
+    <button class="css-button" onclick="location.href='stocks.html'">Stocks</button>
+    <button class="css-button" onclick="location.href='dogs.html'">Dogs</button>
+  </main>
+
+  <div class="audio-controls">
+    <p><strong>Voice Commands:</strong></p>
+    <ul>
+      <li>"Hello" – Alerts Hello World</li>
+      <li>"Change the color to [color]" – Changes background</li>
+      <li>"Navigate to [page]" – Goes to the page</li>
+    </ul>
+    <button onclick="startVoice()">Turn On Audio</button>
+    <button onclick="stopVoice()">Turn Off Audio</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="common.js"></script>
+  <script>
+    fetch('https://zenquotes.io/api/random')
+      .then(res => res.json())
+      .then(data => document.getElementById('quote').innerText = data[0].q + " - " + data[0].a);
+  </script>
+</body>
+</html>

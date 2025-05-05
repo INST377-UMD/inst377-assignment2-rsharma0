@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dogs</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li onclick="navigateTo('index.html')">Home</li>
+      <li onclick="navigateTo('stocks.html')">Stocks</li>
+      <li onclick="navigateTo('dogs.html')">Dogs</li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Dog Gallery</h1>
+    <div id="dogCarousel" class="slider"></div>
+    <div id="breedButtons"></div>
+    <div id="breedInfo" style="display:none;"></div>
+  </main>
+
+  <div class="audio-controls">
+    <p><strong>Voice Commands:</strong></p>
+    <ul>
+      <li>"Hello"</li>
+      <li>"Change the color to [color]"</li>
+      <li>"Navigate to [page]"</li>
+      <li>"Load Dog Breed [breed]"</li>
+    </ul>
+    <button onclick="startVoice()">Turn On Audio</button>
+    <button onclick="stopVoice()">Turn Off Audio</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-slider"></script>
+  <script src="common.js"></script>
+  <script src="dogs.js"></script>
+</body>
+</html>
